@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Music</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>Thai Music</h1>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Artist</th>
+        </tr>
+        <% for(var i=0; i < ThaiSongs.length; i++)  { %>
+        <tr>
+            <td><%= ThaiSongs[i].rank %></td>
+            <td><%= ThaiSongs[i].namesong %></td>
+            <td><%= ThaiSongs[i].artist %></td>
+            <td>
+                <a href="/book/<%= ThaiSongs[i].rank %>">View</a>
+                <a href="/EditThaiSongs/<%= ThaiSongs[i].rank %>">Edit</a>
+                <a href="/delete/<%= ThaiSongs[i].id %>">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/create">Create New ThaiSongs</a>
+
+    <h1>Eng Music</h1>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Artist</th>
+        </tr>
+        <% for(var i=0; i < EngSongs.length; i++)  { %>
+        <tr>
+            <td><%= EngSongs[i].rank %></td>
+            <td><%= EngSongs[i].namesong %></td>
+            <td><%= EngSongs[i].artist %></td>
+            <td>
+                <a href="/book/<%= EngSongs[i].rank %>">View</a>
+                <a href="/EditEngSongs/<%= EngSongs[i].id %>">Edit</a>
+                <a href="/delete/<%= EngSongs[i].id %>">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/create">Create New EngSongs</a>
+
+    <h1>Korean Music</h1>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Artist</th>
+        </tr>
+        <% for(var i=0; i < KoreanSongs.length; i++)  { %>
+        <tr>
+            <td><%= KoreanSongs[i].rank %></td>
+            <td><%= KoreanSongs[i].namesong %></td>
+            <td><%= KoreanSongs[i].artist %></td>
+            <td>
+                <a href="/book/<%= KoreanSongs[i].rank %>">View</a>
+                <a href="/EditKoreanSongs/<%= KoreanSongs[i].id %>">Edit</a>
+                <a href="/delete/<%= KoreanSongs[i].id %>">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    
+    <a href="/create">Create New KoreanSongs</a>
+</body>
+</html>
