@@ -34,7 +34,7 @@ app.get("/EditThaiSongs/:id", async (req, res) => {
         console.error(err);
         res.status(500).send('Error');
     }
-});
+});ออ
 
 app.post("/EditThaiSongs/:id", async (req, res) => {
     try{
