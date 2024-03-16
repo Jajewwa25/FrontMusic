@@ -121,6 +121,84 @@ app.get("/DeleteKoreanSongs/:id", async (req, res) => {
     }
 });
 
+app.get("/ViewThaiSongs/:id", async (req, res) => {
+    try{
+        const response = await axios.get(base_url + '/ThaiSongs/' + req.params.id);
+        console.log(response)
+        res.render("ViewThaiSongs", { ThaiSongs: response.data});
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/ViewEngSongs/:id", async (req, res) => {
+    try{
+        const response = await axios.get(base_url + '/EngSongs/' + req.params.id);
+        console.log(response)
+        res.render("ViewEngSongs", { EngSongs: response.data});
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/ViewKoreanSongs/:id", async (req, res) => {
+    try{
+        const response = await axios.get(base_url + '/KoreanSongs/' + req.params.id);
+        console.log(response)
+        res.render("ViewKoreanSongs", { KoreanSongs: response.data});
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/CreateThaiSongs", (req,res) => {
+    res.render("CreateThaiSongs");
+});
+
+app.post("/CreateThaiSongs",async(req, res) =>{
+    try{
+        const data = {namesong: req.body.namesong, artist: req.body.artist };
+        await axios.post(base_url + '/ThaiSongs',data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/CreateEngSongs", (req,res) => {
+    res.render("CreateEngSongs");
+});
+
+app.post("/CreateEngSongs",async(req, res) =>{
+    try{
+        const data = {namesong: req.body.namesong, artist: req.body.artist };
+        await axios.post(base_url + '/EngSongs',data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/CreateKoreanSongs", (req,res) => {
+    res.render("CreateKoreanSongs");
+});
+
+app.post("/CreateKoreanSongs",async(req, res) =>{
+    try{
+        const data = {namesong: req.body.namesong, artist: req.body.artist };
+        await axios.post(base_url + '/KoreanSongs',data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
 app.listen(5500, () => {
     console.log('Sever started on post 5500');
 });

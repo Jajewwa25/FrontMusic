@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>View EngSongs</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>View EngSongs</h1>
+    <table class="book-table">
+        <tr>
+            <th>Rank</th>
+            <th>NameSong</th>
+            <th>Artist</th>
+        </tr>
+        <tr>
+            <td><%= EngSongs.rank %></td>
+            <td><%= EngSongs.namesong %></td>
+            <td><%= EngSongs.artist %></td>
+        </tr>
+    </table>
+    <div class="link-center"> 
+    <a href="/EditEngSongs/<%= EngSongs.rank %>">Edit</a>                   
+    <a href="/DeleteEngSong/<%= EngSongs.rank %>">Delete</a>
+    <a href="/">Back to List</a>
+    </div>
+    </body>
+</html>

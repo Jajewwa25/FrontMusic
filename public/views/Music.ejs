@@ -18,14 +18,14 @@
             <td><%= ThaiSongs[i].namesong %></td>
             <td><%= ThaiSongs[i].artist %></td>
             <td>
-                <a href="/book/<%= ThaiSongs[i].rank %>">View</a>
+                <a href="/ViewThaiSongs/<%= ThaiSongs[i].rank %>">View</a>
                 <a href="/EditThaiSongs/<%= ThaiSongs[i].rank %>">Edit</a>
                 <a href="/DeleteThaiSongs/<%= ThaiSongs[i].rank %>">Delete</a>
             </td>
         </tr>
         <% } %>
     </table>
-    <a href="/create">Create New ThaiSongs</a>
+    <a href="/CreateThaiSongs">Create New ThaiSongs</a>
 
     <h1>Eng Music</h1>
     <table>
@@ -40,14 +40,14 @@
             <td><%= EngSongs[i].namesong %></td>
             <td><%= EngSongs[i].artist %></td>
             <td>
-                <a href="/book/<%= EngSongs[i].rank %>">View</a>
+                <a href="/ViewEngSongs/<%= EngSongs[i].rank %>">View</a>
                 <a href="/EditEngSongs/<%= EngSongs[i].rank %>">Edit</a>
                 <a href="/DeleteEngSongs/<%= EngSongs[i].rank %>">Delete</a>
             </td>
         </tr>
         <% } %>
     </table>
-    <a href="/create">Create New EngSongs</a>
+    <a href="/CreateEngSongs">Create New EngSongs</a>
 
     <h1>Korean Music</h1>
     <table>
@@ -60,9 +60,9 @@
         <tr>
             <td><%= KoreanSongs[i].rank %></td>
             <td><%= KoreanSongs[i].namesong %></td>
-            <td><%= KoreanSongs[i].artist %></td>
-            <td>
-                <a href="/book/<%= KoreanSongs[i].rank %>">View</a>
+            <td><%= KoreanSongs[i].artist %></td>   
+            <td>                
+                <a href="/ViewKoreanSongs/<%= KoreanSongs[i].rank %>">View</a>
                 <a href="/EditKoreanSongs/<%= KoreanSongs[i].rank %>">Edit</a>
                 <a href="/DeleteKoreanSongs/<%= KoreanSongs[i].rank %>">Delete</a>
             </td>
@@ -70,6 +70,6 @@
         <% } %>
     </table>
     
-    <a href="/create">Create New KoreanSongs</a>
+    <a href="/CreateKoreanSongs">Create New KoreanSongs</a>    
 </body>
-</html>
+</html>         
