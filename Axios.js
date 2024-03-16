@@ -101,6 +101,26 @@ app.get("/DeleteThaiSongs/:id", async (req, res) => {
     }
 });
 
+app.get("/DeleteEngSongs/:id", async (req, res) => {
+    try{
+        await axios.delete(base_url + '/EngSongs/'+ req.params.id);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/DeleteKoreanSongs/:id", async (req, res) => {
+    try{
+        await axios.delete(base_url + '/KoreanSongs/'+ req.params.id);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
 app.listen(5500, () => {
     console.log('Sever started on post 5500');
 });
