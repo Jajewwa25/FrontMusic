@@ -34,12 +34,66 @@ app.get("/EditThaiSongs/:id", async (req, res) => {
         console.error(err);
         res.status(500).send('Error');
     }
-});ออ
+});
 
 app.post("/EditThaiSongs/:id", async (req, res) => {
     try{
         const data = {namesong: req.body.namesong, artist: req.body.artist };
         await axios.put(base_url + '/ThaiSongs/'+ req.params.id,data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/EditEngSongs/:id", async (req, res) => {
+    try{
+        const response = await axios.get(base_url + '/EngSongs/' + req.params.id);
+        console.log(response)
+        res.render("EditEngSongs", { EngSongs: response.data});
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.post("/EditEngSongs/:id", async (req, res) => {
+    try{
+        const data = {namesong: req.body.namesong, artist: req.body.artist };
+        await axios.put(base_url + '/EngSongs/'+ req.params.id,data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/EditKoreanSongs/:id", async (req, res) => {
+    try{
+        const response = await axios.get(base_url + '/KoreanSongs/' + req.params.id);
+        console.log(response)
+        res.render("EditKoreanSongs", { KoreanSongs: response.data});
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.post("/EditKoreanSongs/:id", async (req, res) => {
+    try{
+        const data = {namesong: req.body.namesong, artist: req.body.artist };
+        await axios.put(base_url + '/KoreanSongs/'+ req.params.id,data);
+        res.redirect("/");
+    } catch (err){
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
+
+app.get("/DeleteThaiSongs/:id", async (req, res) => {
+    try{
+        await axios.delete(base_url + '/ThaiSongs/'+ req.params.id);
         res.redirect("/");
     } catch (err){
         console.error(err);

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit EngSongs</title>
+</head>
+<body>
+    <h1>Edit EngSongs</h1>
+    <form method="post" action="/EditEngSongs/<%= EngSongs.rank%>">
+        <label for="namesong">Namesong: </label>
+        <input type="text" id="namesong" name="namesong" value="<%= EngSongs.namesong %>">
+        <br>
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" value="<%= EngSongs.artist %>">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+<a href="/book/<%= EngSongs.id %>">View</a>
+<a href="/delete/<%= EngSongs.id %>">Delete</a>
+<a href="/">Back to List</a>
+</body>
+</html>

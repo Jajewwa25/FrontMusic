@@ -20,7 +20,7 @@
             <td>
                 <a href="/book/<%= ThaiSongs[i].rank %>">View</a>
                 <a href="/EditThaiSongs/<%= ThaiSongs[i].rank %>">Edit</a>
-                <a href="/delete/<%= ThaiSongs[i].id %>">Delete</a>
+                <a href="/DeleteThaiSongs/<%= ThaiSongs[i].rank %>">Delete</a>
             </td>
         </tr>
         <% } %>
@@ -41,7 +41,7 @@
             <td><%= EngSongs[i].artist %></td>
             <td>
                 <a href="/book/<%= EngSongs[i].rank %>">View</a>
-                <a href="/EditEngSongs/<%= EngSongs[i].id %>">Edit</a>
+                <a href="/EditEngSongs/<%= EngSongs[i].rank %>">Edit</a>
                 <a href="/delete/<%= EngSongs[i].id %>">Delete</a>
             </td>
         </tr>
@@ -63,8 +63,8 @@
             <td><%= KoreanSongs[i].artist %></td>
             <td>
                 <a href="/book/<%= KoreanSongs[i].rank %>">View</a>
-                <a href="/EditKoreanSongs/<%= KoreanSongs[i].id %>">Edit</a>
-                <a href="/delete/<%= KoreanSongs[i].id %>">Delete</a>
+                <a href="/EditKoreanSongs/<%= KoreanSongs[i].rank %>">Edit</a>
+                <a href="/DeleteKoreanSongs/<%= KoreanSongs[i].rank %>">Delete</a>
             </td>
         </tr>
         <% } %>
